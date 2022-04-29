@@ -1,0 +1,34 @@
+{% extends 'billing/common.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Add customer</h4>
+                  <p class="card-category">You may select multiple products at once !</p>
+                </div>
+                <div class="card-body">
+                <form class="form-group" method="POST">
+                {% csrf_token %}
+                    {{form|crispy}}
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary pull-right">Add customer</button>
+                  </div>
+                  
+                 </div>
+                </form>
+                </div>
+              </div>
+            </div>
+         
+          </div>
+        </div>
+      </div> 
+     {% endblock content %}
